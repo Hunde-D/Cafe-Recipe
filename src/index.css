@@ -4,7 +4,16 @@
 
 @layer components {
   .max-container {
-    @apply mx-auto max-w-[1280px];
+    @apply mx-auto max-w-[1920px];
+  }
+  .hero-background {
+    @apply w-full bg-heroImg bg-contain bg-top bg-no-repeat;
+  }
+  .heroText {
+    @apply text-[1rem] text-[#6F757C] max-sm:text-sm md:text-xl;
+  }
+  .labelText {
+    @apply m-2 text-[1.25rem] text-[#FEF7EE];
   }
 }
 @layer base {
@@ -16,8 +25,5 @@
   }
   h1 {
     @apply text-[2rem] font-bold;
-  }
-  p {
-    @apply text-[1rem] text-[#6F757C] max-sm:text-sm md:text-xl;
   }
 }
