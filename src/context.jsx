@@ -6,6 +6,7 @@ const GlobalState = ({ children }) => {
   const [searchValue, setSearchValue] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [favorites, setFavorites] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +25,6 @@ const GlobalState = ({ children }) => {
         setSearchValue("");
         setLoading(false);
       }
-      console.log(data);
     } catch (error) {
       setSearchValue("");
       setLoading(false);
@@ -38,9 +38,11 @@ const GlobalState = ({ children }) => {
       value={{
         searchValue,
         setSearchValue,
-        handleSubmit,
+        favorites,
+        setFavorites,
         recipes,
         loading,
+        handleSubmit,
       }}
     >
       {children}

@@ -9,9 +9,12 @@ const Hero = () => {
     <div className="mx-auto flex flex-col items-center justify-center p-2 text-center max-sm:w-5/6 lg:w-4/6">
       <h1>Our Collection</h1>
       <p className="heroText">
-        Introducing our Coffee Collection, a selection of unique coffees from
-        different roast types and origins, expertly roasted in small batches and
-        shipped fresh weekly.
+        Discover our Culinary Journey, a curated collection of recipes from
+        around the globe, meticulously crafted for home chefs and food
+        enthusiasts alike. Each recipe is a blend of traditional flavors and
+        modern twists, designed to inspire your kitchen creations and bring the
+        world's cuisines right to your table, freshly prepared with love and
+        passion.
       </p>
       <form className="m-3 flex rounded-xl border-[1px] pr-3">
         <input

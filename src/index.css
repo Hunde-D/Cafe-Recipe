@@ -26,4 +26,25 @@
   h1 {
     @apply text-[2rem] font-bold;
   }
+  td {
+    padding: 10px;
+  }
+  table thead th {
+    padding: 10px;
+    border: 1px solid #54585d;
+  }
+  td {
+    border: 1px solid #dddfe1;
+    text-align: center;
+  }
+  tr td:nth-child(1) {
+    text-align: left;
+  }
+
+  tbody tr {
+    background-color: #2f3031;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #4b4a4a;
+  }
 }

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context";
 const Home = () => {
   const { recipes, loading } = useContext(GlobalContext);
-  // console.log(searchValue);
 
   const renderRecipes = recipes.map((recipe) => (
     <div
