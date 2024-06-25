@@ -1,10 +1,10 @@
 import { Outlet } from "react-router";
-import Navbar from "./Navbar";
+import Hero from "./Hero";
 const Layout = () => {
   return (
-    <div className="max-container container flex flex-col items-center justify-center">
-      <Navbar className="fixed top-0" />
-      <main className="2xl:mt-58 z-10 mt-44 flex h-full w-[96%] justify-center rounded-md sm:mt-28 lg:mt-36 xl:mt-44">
+    <div className="max-container bg-heroImg container flex flex-col items-center justify-center">
+      <main className="2xl:mt-58 z-10 mt-44 flex h-full w-[96%] flex-col items-center justify-center rounded-md sm:mt-28 lg:mt-36 xl:mt-44">
+        <Hero />
         <Outlet />
       </main>
     </div>
