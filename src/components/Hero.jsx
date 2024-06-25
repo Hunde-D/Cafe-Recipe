@@ -30,8 +30,9 @@ const Hero = () => {
         <button onClick={handleSubmit}>🔍</button>
       </form>
       <div className="space-x-6">
-        <button className="">All products </button>
-        <button>Available Now</button>
+        <NavLink to="/">
+          <button className="">Home </button>
+        </NavLink>
         <NavLink to="favorites">
           <button>Favorites</button>
         </NavLink>

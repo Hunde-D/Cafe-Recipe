@@ -1,21 +1,44 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context";
+import { IoHeart } from "react-icons/io5";
 const Home = () => {
-  const { recipes, loading } = useContext(GlobalContext);
+  const { recipes, loading, setFavorites, favorites } =
+    useContext(GlobalContext);
 
+  const addFavorites = (recipe) => {
+    const favoriteRecipes = {
+      title: recipe.title,
+      publisher: recipe.publisher,
+      image_url: recipe.image_url,
+      id: recipe.id,
+    };
+    setFavorites((prev) =>
+      prev.find((item) => item.id === favoriteRecipes.id)
+        ? prev.filter((item) => item.id !== favoriteRecipes.id)
+        : [...prev, favoriteRecipes],
+    );
+  };
   const renderRecipes = recipes.map((recipe) => (
     <div
       key={recipe.id}
       className="mx-auto overflow-hidden border-black shadow-lg"
     >
-      <Link to={`/recipe-item/${recipe.id}`}>
-        <img
-          src={recipe.image_url}
-          alt={recipe.title}
-          className="h-64 rounded-3xl object-cover sm:w-[22rem]"
+      <div className="relative">
+        <Link to={`/recipe-item/${recipe.id}`}>
+          <img
+            src={recipe.image_url}
+            alt={recipe.title}
+            className="h-64 rounded-3xl object-cover sm:w-[22rem]"
+          />
+        </Link>
+        <IoHeart
+          className={`absolute right-2 top-2 text-xl hover:text-red-500 ${favorites.find((fav) => fav.id === recipe.id) && "text-red-500"}`}
+          onClick={() => addFavorites(recipe)}
         />
-        <p className="labelText font-bold">{recipe.title}</p>
+      </div>
+      <Link to={`/recipe-item/${recipe.id}`}>
+        <p className="labelText w-full font-bold">{recipe.title}</p>
         <p className="labelText text-[1rem] text-[#6F757C]">
           {recipe.publisher}
         </p>
