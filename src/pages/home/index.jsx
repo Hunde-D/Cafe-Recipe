@@ -10,7 +10,7 @@ const Home = () => {
       key={recipe.id}
       className="mx-auto overflow-hidden border-black shadow-lg"
     >
-      <Link to="/detail">
+      <Link to={`/recipe-item/${recipe.id}`}>
         <img
           src={recipe.image_url}
           alt={recipe.title}
