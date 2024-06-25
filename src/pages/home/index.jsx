@@ -22,15 +22,11 @@ const Home = () => {
   const renderRecipes = recipes.map((recipe) => (
     <div
       key={recipe.id}
-      className="mx-auto overflow-hidden border-black shadow-lg"
+      className="mx-auto overflow-hidden rounded-3xl border-black shadow-lg"
     >
-      <div className="relative">
+      <div className="">
         <Link to={`/recipe-item/${recipe.id}`}>
-          <img
-            src={recipe.image_url}
-            alt={recipe.title}
-            className="h-64 rounded-3xl object-cover sm:w-[22rem]"
-          />
+          <img src={recipe.image_url} alt={recipe.title} className="image" />
         </Link>
         <IoHeart
           className={`absolute right-2 top-2 text-xl hover:text-red-500 ${favorites.find((fav) => fav.id === recipe.id) && "text-red-500"}`}

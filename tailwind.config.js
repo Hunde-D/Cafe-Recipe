@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         heroImg: "url('/src/assets/bg-cafe.jpg')",
+        titleBg: "url('/src/assets/vector.svg')",
       },
     },
   },

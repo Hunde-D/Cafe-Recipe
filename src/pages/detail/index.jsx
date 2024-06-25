@@ -4,7 +4,7 @@ import { GlobalContext } from "../../context";
 
 const Detail = () => {
   const { id } = useParams();
-  const { setFavorites, favorites } = useContext(GlobalContext);
+  const { setFavorites } = useContext(GlobalContext);
   const [recipeDetail, setRecipeDetail] = useState([]);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Detail = () => {
       <img
         src={recipeDetail.image_url}
         alt={recipeDetail.title}
-        className="h-64 rounded-3xl object-cover transition-transform duration-500 ease-out hover:scale-105 sm:w-[22rem]"
+        className="image"
       />
       <div className="p-4">
         <p className="text-gray-500">{recipeDetail.publisher}</p>

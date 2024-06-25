@@ -31,7 +31,6 @@ const GlobalState = ({ children }) => {
       console.log(error);
     }
   };
-  console.log(loading, recipes);
 
   return (
     <GlobalContext.Provider

@@ -6,20 +6,21 @@ const Favorites = () => {
   const renderFavorites = favorites.map((recipe) => (
     <div
       key={recipe.id}
-      className="mx-auto overflow-hidden border-black shadow-lg"
+      className="mx-auto overflow-hidden rounded-3xl border-black shadow-lg"
     >
       <Link to={`/recipe-item/${recipe.id}`}>
-        <img
-          src={recipe.image_url}
-          alt={recipe.title}
-          className="h-64 rounded-3xl object-cover sm:w-[22rem]"
-        />
+        <img src={recipe.image_url} alt={recipe.title} className="image" />
       </Link>
       <section className="flex justify-between">
         <Link to={`/recipe-item/${recipe.id}`}>
           <p className="labelText font-bold">{recipe.title}</p>
         </Link>
-        <button onClick={() => removeFavorite(recipe.id)}>remove</button>
+        <button
+          onClick={() => removeFavorite(recipe.id)}
+          className="mt-2 h-8 rounded-lg bg-[#BEE3CC] px-1 font-semibold text-[#111315] hover:bg-[#111315] hover:text-[#FEF7EE]"
+        >
+          remove
+        </button>
       </section>
       <Link to={`/recipe-item/${recipe.id}`}>
         <p className="labelText text-[1rem] text-[#6F757C]">
