@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .max-container {
+    @apply mx-auto max-w-[1280px];
+  }
+}
+@layer base {
+  body {
+    @apply bg-[#111315] text-[#FEF7EE];
+  }
+  main {
+    @apply bg-[#1B1D1F];
+  }
+  h1 {
+    @apply text-[2rem] font-bold;
+  }
+  p {
+    @apply text-[1rem] text-[#6F757C] max-sm:text-sm md:text-xl;
+  }
+}
